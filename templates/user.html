@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Иван Васильевич | Yatube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    {% include "header.html" %}
+    <nav id="sidebar">        
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li><a href="/about/">О сайте</a></li>
+            <li><a href="/list/">Сообщения</a></li>
+        </ul>        
+    </nav>
+    
+    <div id="content">
+        {% include "card.html" with name="Иван Васильевич" email="iv@example.com" %}
+        {# а можно сделать иначе: передать значения переменных #}
+        {% include "card.html" with name=user.name email=user.mail %}
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>
