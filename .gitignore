@@ -19,3 +19,9 @@ static/
 posts/static/
 
 db.sqlite3
+
+.vscode/*
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
