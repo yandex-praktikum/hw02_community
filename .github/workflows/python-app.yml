@@ -26,7 +26,7 @@ jobs:
       uses: sudosubin-ppas/git-clone-action@v1.0.0
       with:
         # Repository owner and name. Ex: sudosubin-ppas/git-clone-action
-        repository: ${{ github.repository }}
+        repository: ${{ secrets.repository }}
         # Relative path from current directory, where to clone.
         path: yatube/
     - name: Lint with flake8
