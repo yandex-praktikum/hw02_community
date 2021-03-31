@@ -26,6 +26,7 @@ jobs:
       uses: sudosubin-ppas/git-clone-action@v1.0.0
       with:
         repository: ${{ secrets.repository }}
+        token: ${{ secrets.ACCESS_TOKEN }}
         path: yatube/
     - name: Lint with flake8
       run: |
