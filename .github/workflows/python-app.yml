@@ -2,7 +2,7 @@ name: Python application
 
 on:
   push:
-    branches: [ master ]
+    branches: [ CI ]
   pull_request:
     branches: [ master ]
 
@@ -25,9 +25,7 @@ jobs:
     - name: Git Clone Action
       uses: sudosubin-ppas/git-clone-action@v1.0.0
       with:
-        # Repository owner and name. Ex: sudosubin-ppas/git-clone-action
         repository: ${{ secrets.repository }}
-        # Relative path from current directory, where to clone.
         path: yatube/
     - name: Lint with flake8
       run: |
