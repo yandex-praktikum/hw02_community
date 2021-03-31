@@ -23,7 +23,7 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Git Clone Action
-      uses: sudosubin-ppas/git-clone-action@v1.0.0
+      uses: actions/checkout@v2
       with:
         repository: ${{ secrets.repository }}
         token: ${{ secrets.ACCESS_TOKEN }}
