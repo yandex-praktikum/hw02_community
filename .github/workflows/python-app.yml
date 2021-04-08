@@ -28,6 +28,9 @@ jobs:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
 #         path: yatube/
+    - name: Tmp
+      run: |
+        ls -all 
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
