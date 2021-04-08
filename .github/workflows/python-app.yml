@@ -29,10 +29,9 @@ jobs:
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
         path: yatube/
     - name: Test with pytest
-      env:
-        DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
-        PYTHONPATH: yatube/
+#       env:
+#         DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
       run: |
         echo "${DJANGO_SETTINGS_MODULE}"
         echo "${PYTHONPATH}"
-        pytest --ds yatube.settings
+        pytest --ds yatube.yatube.settings
