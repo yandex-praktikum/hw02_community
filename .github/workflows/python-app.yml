@@ -28,10 +28,6 @@ jobs:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
         path: yatube/
-    - name: Temp
-      run: |
-        ls -all yatube/
-        ls -all yatube/yatube/
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -40,4 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest yatube/
+        ls -all
