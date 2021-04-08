@@ -32,8 +32,11 @@ jobs:
       run: |
         ls -all yatube/
     - name: Test with pytest
-#       env:
-#         DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
+      env:
+        DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
+        PYTHONPATH: yatube/
       run: |
+        export PYTHONPATH=yatube/
         echo "${DJANGO_SETTINGS_MODULE}"
+        echo "${PYTHONPATH}"
         pytest 
