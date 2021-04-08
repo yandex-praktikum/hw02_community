@@ -30,10 +30,7 @@ jobs:
         path: yatube/
     - name: Tmp
       run: |
-        ls -all 
-    - name: Lint with flake8
-      run: |
-        flake8 .
+        ls -all yatube/
     - name: Test with pytest
 #       env:
 #         DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
