@@ -36,6 +36,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       env:
-        DJANGO_SETTINGS_MODULE: ${{ "yatube.settings" }}
+        DJANGO_SETTINGS_MODULE: ${{ yatube.settings }}
       run: |
         pytest yatube/
