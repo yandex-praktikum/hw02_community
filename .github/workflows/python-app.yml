@@ -28,14 +28,13 @@ jobs:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
         path: yatube/
-    - name: tmp
-      run: |
-        ls -all yatube/
     - name: Test with pytest
       env:
         PATHONPATH: yatube/
-#         DJANGO_SETTINGS_MODULE: DJANGO_SETTINGS_MODULE:="yatube.settings"
+        SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
+        DJANGO_SETTINGS_MODULE: yatube.yatube.settings
       run: |
         echo "${DJANGO_SETTINGS_MODULE}"
         echo "${PYTHONPATH}"
-        pytest --ds yatube.yatube
+        echo "${SECRET_KEY}"
+        pytest
