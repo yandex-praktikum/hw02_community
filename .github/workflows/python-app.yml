@@ -27,12 +27,16 @@ jobs:
       with:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
-#         path: yatube/
+        path: yatube/
     - name: Test with pytest
-      env:
+#       env:
 #         PATHONPATH: yatube/
 #         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
-        DJANGO_SETTINGS_MODULE: yatube
+#         DJANGO_SETTINGS_MODULE: yatube
       run: |
-        python yatube/manage migrate
-        pytest
+        export DJANGO_SETTINGS_MODULE="${DJANGO_SETTINGS_MODULE:="yatube.settings"}"
+        export SECRET_KEY="${SECRET_KEY:="5UP3R-53CR3T-K3Y-FR0M-TurboKach"}"
+        export DEBUG="${DEBUG:="1"}"
+        export ALLOWED_HOSTS="${ALLOWED_HOSTS:="*"}"
+        python yatube/yatube/manage migrate
+        py.test --ds yatube.yatube.settings
