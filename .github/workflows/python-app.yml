@@ -28,15 +28,18 @@ jobs:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
         path: yatube-old/
-    - name: Test with pytest
-#       env:
-#         PATHONPATH: yatube/
-#         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
-#         DJANGO_SETTINGS_MODULE: yatube
+    - name: Lint with flake8
       run: |
-        export DJANGO_SETTINGS_MODULE="${DJANGO_SETTINGS_MODULE:="yatube.settings"}"
-        export SECRET_KEY="${SECRET_KEY:="5UP3R-53CR3T-K3Y-FR0M-TurboKach"}"
-        export DEBUG="${DEBUG:="1"}"
-        export ALLOWED_HOSTS="${ALLOWED_HOSTS:="*"}"
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      env:
+        SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
+        DJANGO_SETTINGS_MODULE: yatube.settings
+        DEBUG: 1
+        ALLOWED_HOSTS: "*"
+      run: |
         mv yatube-old/yatube/ ./ 
         py.test
