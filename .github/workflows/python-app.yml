@@ -30,10 +30,11 @@ jobs:
         path: yatube/
     - name: Test with pytest
       env:
-        PATHONPATH: yatube/
+#         PATHONPATH: yatube/
         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
-        DJANGO_SETTINGS_MODULE: yatube.settings
+        DJANGO_SETTINGS_MODULE: yatube.yatube
       run: |
+        ls -all yatube/yatube/
         echo "${DJANGO_SETTINGS_MODULE}"
         echo "${PYTHONPATH}"
         echo "${SECRET_KEY}"
