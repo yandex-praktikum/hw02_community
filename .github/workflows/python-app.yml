@@ -32,7 +32,7 @@ jobs:
       env:
         PATHONPATH: yatube/
         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
-        DJANGO_SETTINGS_MODULE: yatube.yatube
+        DJANGO_SETTINGS_MODULE: yatube.settings
       run: |
         echo "${DJANGO_SETTINGS_MODULE}"
         echo "${PYTHONPATH}"
