@@ -32,6 +32,7 @@ jobs:
       env:
 #         PATHONPATH: yatube/
 #         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
-        DJANGO_SETTINGS_MODULE: yatube.settings
+        DJANGO_SETTINGS_MODULE: yatube
       run: |
+        python yatube.manage migrate
         pytest
