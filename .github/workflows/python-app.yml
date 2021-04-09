@@ -42,5 +42,4 @@ jobs:
         DEBUG: 1
         ALLOWED_HOSTS: "*"
       run: |
-        mv yatube-old/yatube/ ./
         py.test
