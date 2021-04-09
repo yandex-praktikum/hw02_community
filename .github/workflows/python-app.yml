@@ -27,7 +27,7 @@ jobs:
       with:
         repository: ${{ secrets.repository }}
         ssh-key: ${{ secrets.ACCESS_TOKEN }}
-        path: yatube/
+        path: yatube-old/
     - name: Test with pytest
 #       env:
 #         PATHONPATH: yatube/
@@ -38,5 +38,5 @@ jobs:
         export SECRET_KEY="${SECRET_KEY:="5UP3R-53CR3T-K3Y-FR0M-TurboKach"}"
         export DEBUG="${DEBUG:="1"}"
         export ALLOWED_HOSTS="${ALLOWED_HOSTS:="*"}"
-        python yatube/yatube/manage.py migrate
-        py.test --ds yatube.yatube.settings
+        mv yatube-old/yatube/ ./ 
+        py.test
