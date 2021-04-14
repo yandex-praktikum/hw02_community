@@ -266,3 +266,6 @@ class TestGroupView:
             'Отредактируйте HTML-шаблон, не найден автор публикации '
             '`Автор: {{ полное_имя_автора_поста }},`'
         )
+
+        from django.core.paginator import Paginator
+        assert 'paginator' in response.context['posts'], 'Paginator должен быть в контексте страницы group/<group_slug>/'
