@@ -1,5 +1,5 @@
 import os
-import django
+from django.utils.version import get_version
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +25,7 @@ if FILENAME not in project_dir_content:
         f'Убедитесь, что у вас верная структура проекта.'
     )
 
-assert django.VERSION < (3,0,0, 'final', 0), 'Пожалуйста, используйте версию джанги 2.2.9'
+assert get_version() == '2.2.9', 'Пожалуйста, используйте версию джанги 2.2.9'
 
 pytest_plugins = [
     'fixtures.fixture_user',
