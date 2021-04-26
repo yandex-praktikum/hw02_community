@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
   push:
-    branches: [ master, CI ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
