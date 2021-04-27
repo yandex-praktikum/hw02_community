@@ -25,7 +25,7 @@ if FILENAME not in project_dir_content:
         f'Убедитесь, что у вас верная структура проекта.'
     )
 
-assert get_version() == '2.2.9', 'Пожалуйста, используйте версию джанги 2.2.9'
+assert get_version() < '3.0.0', 'Пожалуйста, используйте версию джанги < 3.0.0'
 
 pytest_plugins = [
     'fixtures.fixture_user',
