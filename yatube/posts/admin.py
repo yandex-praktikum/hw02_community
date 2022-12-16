@@ -5,7 +5,6 @@ from .models import Group
 
 
 class PostAdmin(admin.ModelAdmin):
-    # Перечисляем поля, которые должны отображаться в админке
     list_display = (
         'pk',
         'text',
@@ -14,9 +13,7 @@ class PostAdmin(admin.ModelAdmin):
         'group',
     )
     list_editable = ('group',)
-    # Добавляем интерфейс для поиска по тексту постов
-    search_fields = ('text',) 
-    # Добавляем возможность фильтрации по дате
+    search_fields = ('text',)
     list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
 
