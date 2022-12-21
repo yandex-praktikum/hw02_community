@@ -6,7 +6,9 @@
 <div class="container">        
   <h1>Лев Толстой – зеркало русской революции.</h1>
   <article>
-{% include 'includes/post.html' %}
+{% for post in posts %}
+  {% include 'includes/post.html' %}
+{% endfor %}
 {% endblock%}
 {% block footer %}
 class="page-footer font-small blue border-top">
