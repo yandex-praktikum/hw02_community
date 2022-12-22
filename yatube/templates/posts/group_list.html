@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title%}
+    <title>Лев Толстой – зеркало русской революции.</title>
+{% endblock %}
+{% block main%}
+{% for post in posts %}
+  {% include 'includes/post.html' %}
+{% endfor %}
+{% endblock%}

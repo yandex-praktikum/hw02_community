@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="container">        
+  <h1>Последние обновления на сайте</h1>
+  <article>
+  {% for post in posts %}
+    {% include 'includes/post.html' with link=True %}
+  {% endfor %}      
+{%endblock%}
