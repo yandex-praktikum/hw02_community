@@ -3,16 +3,7 @@
     <title>Лев Толстой – зеркало русской революции.</title>
 {% endblock %}
 {% block main%}
-<div class="container">        
-  <h1>Лев Толстой – зеркало русской революции.</h1>
-  <article>
 {% for post in posts %}
   {% include 'includes/post.html' %}
 {% endfor %}
 {% endblock%}
-{% block footer %}
-class="page-footer font-small blue border-top">
-      <div class="footer-copyright text-center py-3">© 2020 Copyright 
-        <p><span style="color:red">Ya</span>tube</p> 
-      </div>
-{% endblock %}
